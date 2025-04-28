@@ -14,4 +14,4 @@ services:
       - /home/ethos/docker/node-red-dev:/data
     ports:
       - "1880:1880"
-    command: sh -c "npm install -g nodemon && nodemon --verbose --legacy-watch -L --watch /data/lib /usr/src/node-red/node_modules/node-red/red.js --userDir /data"
+    command: sh -c "npm install -g nodemon && nodemon --verbose --legacy-watch -L --watch /data/lib/hello-world/hello-world.js /usr/src/node-red/node_modules/node-red/red.js --userDir /data"
