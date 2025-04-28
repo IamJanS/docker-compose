@@ -1,0 +1,17 @@
+services:
+  # https://hub.docker.com/r/nodered/node-red
+  node-red-dev:
+    restart: unless-stopped
+    container_name: node-red-dev
+    image: nodered/node-red:latest
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Amsterdam
+      - NODE_RED_ENABLE_SAFE_MODE=false
+      - NODE_RED_ENABLE_PROJECTS=false
+    volumes:
+      - /home/ethos/docker/node-red-dev:/data
+    ports:
+      - "1880:1880"
+    command: sh -c "npm install -g nodemon && nodemon --legacy-watch -L --watch /data/lib /usr/src/node-red/node_modules/node-red/red.js --userDir /data"
