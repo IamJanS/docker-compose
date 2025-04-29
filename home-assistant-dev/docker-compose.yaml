@@ -1,0 +1,12 @@
+services:
+  homeassistant:
+    container_name: home-assistant-dev
+    image: "ghcr.io/home-assistant/home-assistant:stable"
+    volumes:
+      - /home/ethos/docker/home-assistant-dev:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Amsterdam
+    network_mode: host
+    restart: unless-stopped
