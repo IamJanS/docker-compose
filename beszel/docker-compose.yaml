@@ -6,5 +6,5 @@ services:
     ports:
       - 8090:8090
     volumes:
-      - /home/ethos/docker/beszel_data:/beszel_data
-      - /home/ethos/docker/beszel_socket:/beszel_socket
+      - /home/ethos/docker/beszel/beszel_data:/beszel_data
+      - /home/ethos/docker/beszel/beszel_socket:/beszel_socket
